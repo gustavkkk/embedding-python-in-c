@@ -2,6 +2,6 @@
   embedding python in MSVC
 # ref
 
-# Notice
+# Attention
 
   * Don't name python file 'test.py'. It doesn't work
