@@ -1,0 +1,8 @@
+﻿  stdafx.cpp
+  TestBinding.cpp
+TestBinding.cpp(105): warning C4101: 'pDict': unreferenced local variable
+TestBinding.cpp(183): warning C4244: 'initializing': conversion from 'Py_ssize_t' to 'int', possible loss of data
+  Generating code
+  All 22 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  TestBinding.vcxproj -> H:\Binding\TestBinding\bin\x64\Release\TestBinding.exe
