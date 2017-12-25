@@ -3,8 +3,8 @@
 // Don't name python file 'test.py'. It doesn't work.
 // https://stackoverflow.com/questions/24313681/pyobject-getattrstring-c-function-returning-null-unable-to-call-python-functi
 #include "stdafx.h"
-#include <iostream>  
-#include <Python.h>  
+#include <iostream> 
+#include <Python.h> 
 
 using namespace std;
 
@@ -48,6 +48,7 @@ void Simplest()
 	wchar_t *title = _T("simple");
 	Py_SetProgramName(title);//argv[0]);
 	Py_Initialize();
+	//PySys_SetPath(_T("libs;"));
 	char *string = "from time import time,ctime\n""print('Today is', ctime(time()))\n";
 	PyRun_SimpleString(string);
 	Py_Finalize();
@@ -57,7 +58,9 @@ void Simplest()
 //调用输出"Hello World"函数  
 void HelloWorld()
 {
-	Py_Initialize();//使用python之前，要调用Py_Initialize();这个函数进行初始化 
+	Py_Initialize();//使用python之前，要调用Py_Initialize();这个函数进行初始化
+	//Py_SetPythonHome(_T("python"));
+	//PySys_SetPath(_T("python/Lib;python/DLLs;python/Lib/site-packages;python/libs;"));
 	PyObject * pModule = NULL;//声明变量  
 	PyObject * pFunc = NULL;//声明变量
 #ifdef CONFIDENT
@@ -82,7 +85,7 @@ void HelloWorld()
 void Add()
 {
 	Py_Initialize();
-
+	//PySys_SetPath(_T("libs;"));
 	PyObject * pModule = NULL;
 	PyObject * pFunc = NULL;
 	pModule = PyImport_ImportModule("script");//test:Python文件名  
@@ -106,6 +109,7 @@ void Multiply()
 	PyObject *pArgs, *pValue;
 
 	Py_Initialize();
+	//PySys_SetPath(_T("libs;"));
 	pName = PyUnicode_DecodeFSDefault("script");
 	/* Error checking of pName left out */
 	pModule = PyImport_Import(pName);
@@ -165,7 +169,7 @@ void Multiply()
 void TestTransferDict()
 {
 	Py_Initialize();
-
+	//PySys_SetPath(_T("libs;"));
 	PyObject * pModule = NULL;
 	PyObject * pFunc = NULL;
 	pModule = PyImport_ImportModule("script");//test:Python文件名  
@@ -194,7 +198,7 @@ void TestTransferDict()
 void TestClass()
 {
 	Py_Initialize();
-
+	//PySys_SetPath(_T("libs;"));
 	PyObject * pModule = NULL;
 	PyObject * pFunc = NULL;
 	pModule = PyImport_ImportModule("script");//test:Python文件名  

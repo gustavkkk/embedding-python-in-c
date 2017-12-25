@@ -1,0 +1,6 @@
+﻿  IPC.cpp
+IPC.cpp(15): warning C4010: single-line comment contains line-continuation character
+  Generating code
+  All 1 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  IPC.vcxproj -> H:\Binding\embedding-python-in-c\bin\x64\Release\IPC.exe
